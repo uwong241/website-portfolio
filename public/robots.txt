@@ -1,0 +1,11 @@
+# Indexing policy for this portfolio
+User-agent: *
+Allow: /
+Disallow:
+
+# Crawl-delay (optional) — keep low for portfolio
+Crawl-delay: 1
+
+# Disallow a few dynamic-looking routes or admin paths
+Disallow: /api/
+Disallow: /admin/
