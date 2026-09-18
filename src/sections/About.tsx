@@ -43,7 +43,7 @@ export const About = () => {
                 Rather than relying solely on theoretical study, I maintain a physical and virtualized homelab where I configure routers, deploy Proxmox clusters, manage NFS storage, and experiment with local AI inference pipelines. My focus is on building robust systems from scratch and understanding how every layer interacts.
               </p>
               <div className="pt-2 flex flex-wrap gap-2 text-xs font-mono text-secondary">
-                <span className="px-3 py-1 rounded-md bg-surface border border-border">📍 Lumajang, East Java</span>
+                <span className="px-3 py-1 rounded-md bg-surface border border-border">📍 Malang, East Java</span>
                 <span className="px-3 py-1 rounded-md bg-surface border border-border">🖥️ Linux Enthusiast</span>
                 <span className="px-3 py-1 rounded-md bg-surface border border-border">🌐 Network & Homelab</span>
               </div>
