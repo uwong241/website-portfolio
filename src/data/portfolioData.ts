@@ -27,7 +27,7 @@ export const PROFILE = {
   bio: "Vocational student building real-world experience through Linux, networking, virtualization, cybersecurity, and homelab infrastructure. Hands-on experimentation and rigorous troubleshooting.",
   github: "https://github.com/wehrmacht241",
   linkedin: "https://linkedin.com/in/example",
-  email: "ahmad.daffa@example.com"
+  email: "ahmaddaffaakun23655@gmail.com"
 };
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
