@@ -124,12 +124,11 @@ export const PROJECTS: Project[] = [
 
 export const TIMELINE: TimelineNode[] = [
   { title: "Linux Mastery", description: "Deep dive into Linux CLI, Arch/Debian, filesystem hierarchies, and systemd." },
-  { title: "System Administration", description: "Headless server management, SSH hardening, package management, and kernel troubleshooting." },
-  { title: "Networking Fundamentals", description: "TCP/IP, IPv4 subnetting, static routing, DHCP, NAT, and packet capture." },
   { title: "Homelab Construction", description: "Repurposing old hardware into multi-node Linux server racks with network storage." },
+  { title: "System Administration", description: "Headless server management, SSH hardening, package management, and kernel troubleshooting." },
+  { title: "Local AI Infrastructure", description: "Running GGUF models locally via llama.cpp, resource profiling, and local AI agent integration." },
   { title: "Proxmox & Virtualization", description: "Deploying KVM, LXC, bridges, and Corosync high-availability clustering." },
+  { title: "Networking Fundamentals", description: "TCP/IP, IPv4 subnetting, static routing, DHCP, NAT, and packet capture." },
   { title: "MikroTik Routing", description: "Virtual router configuration, firewall rules, gateway integration, and subnet isolation." },
-  { title: "Tailscale & VPNs", description: "Encrypted mesh VPN overlays and subnet routing for secure remote management." },
-  { title: "Cybersecurity & Hardening", description: "Attack surface reduction, firewall tuning, and defensive security posture." },
-  { title: "Local AI Infrastructure", description: "Running GGUF models locally via llama.cpp, resource profiling, and local AI agent integration." }
+  { title: "Tailscale & VPNs", description: "Encrypted mesh VPN overlays and subnet routing for secure remote management." }
 ];
