@@ -13,13 +13,12 @@ export const Section = ({ children, className = '', id }: SectionProps) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
+        // Toggle visibility based on entry so scrolling up and down re-triggers animation
+        setIsVisible(entry.isIntersecting);
       },
       {
-        threshold: 0.08,
-        rootMargin: '0px 0px -50px 0px',
+        threshold: 0.05,
+        rootMargin: '0px 0px -20px 0px',
       }
     );
 
@@ -34,10 +33,10 @@ export const Section = ({ children, className = '', id }: SectionProps) => {
     <section
       id={id}
       ref={sectionRef}
-      className={`scroll-mt-16 transition-all duration-1000 ease-out transform ${
+      className={`scroll-mt-16 transition-all duration-700 cubic-bezier(0.16, 1, 0.3, 1) transform ${
         isVisible
           ? 'opacity-100 translate-y-0 filter blur-0 scale-100'
-          : 'opacity-0 translate-y-16 filter blur-[2px] scale-[0.98]'
+          : 'opacity-0 translate-y-20 filter blur-[2px] scale-[0.97]'
       } ${className}`}
     >
       {children}

@@ -13,13 +13,12 @@ export const StaggerReveal = ({ children, delay = 0, className = '' }: StaggerRe
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setShown(true);
-        }
+        // Toggle shown so elements plunge in/out dynamically on scroll
+        setShown(entry.isIntersecting);
       },
       {
-        threshold: 0.1,
-        rootMargin: '0px 0px -40px 0px',
+        threshold: 0.05,
+        rootMargin: '0px 0px -20px 0px',
       }
     );
 
@@ -34,13 +33,13 @@ export const StaggerReveal = ({ children, delay = 0, className = '' }: StaggerRe
     <div
       ref={ref}
       style={{
-        transitionDelay: `${delay}ms`,
-        transitionDuration: '800ms',
+        transitionDelay: shown ? `${delay}ms` : '0ms',
+        transitionDuration: '650ms',
       }}
       className={`transition-all cubic-bezier(0.16, 1, 0.3, 1) transform ${
         shown
-          ? 'opacity-100 translate-y-0 filter blur-0'
-          : 'opacity-0 translate-y-12 filter blur-[1px]'
+          ? 'opacity-100 translate-y-0 filter blur-0 scale-100'
+          : 'opacity-0 translate-y-16 filter blur-[1px] scale-[0.98]'
       } ${className}`}
     >
       {children}
