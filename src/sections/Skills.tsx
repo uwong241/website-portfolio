@@ -12,7 +12,7 @@ export const Skills = () => {
             <span className="text-accent text-sm font-semibold tracking-wider uppercase mb-2 block">Technical Competencies</span>
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">Skills & Capabilities</h2>
             <p className="text-secondary max-w-2xl mx-auto">
-              Focused on foundational systems engineering, network administration, and hands-on infrastructure tooling.
+              Focused on foundational systems engineering, network administration, and hands-on infrastructure tooling with transparent learning metrics.
             </p>
           </div>
 
@@ -20,9 +20,47 @@ export const Skills = () => {
             {SKILL_CATEGORIES.map((cat, idx) => (
               <Card key={idx} className="p-6 border border-border/80 bg-background-light flex flex-col justify-between">
                 <div>
-                  <h3 className="text-lg font-bold text-primary mb-4 pb-2 border-b border-border">
-                    {cat.category}
-                  </h3>
+                  <div className="flex items-center justify-between mb-3 pb-2 border-b border-border">
+                    <h3 className="text-base font-bold text-primary">
+                      {cat.category}
+                    </h3>
+                  </div>
+
+                  {/* Progress & Focus Metrics Bar */}
+                  {(cat.learningProgress !== undefined || cat.learningFocus !== undefined) && (
+                    <div className="mb-5 p-3 rounded-lg bg-surface/60 border border-border/60 space-y-2.5 font-mono text-xs">
+                      {cat.learningProgress !== undefined && (
+                        <div>
+                          <div className="flex justify-between items-center mb-1">
+                            <span className="text-secondary text-[11px]">learning progress</span>
+                            <span className="text-emerald-500 font-semibold">{cat.learningProgress}%</span>
+                          </div>
+                          <div className="w-full bg-border/60 h-1.5 rounded-full overflow-hidden">
+                            <div 
+                              className="bg-emerald-500 h-full rounded-full transition-all duration-500" 
+                              style={{ width: `${cat.learningProgress}%` }}
+                            />
+                          </div>
+                        </div>
+                      )}
+
+                      {cat.learningFocus !== undefined && (
+                        <div>
+                          <div className="flex justify-between items-center mb-1">
+                            <span className="text-secondary text-[11px]">learning focus</span>
+                            <span className="text-blue-500 font-semibold">{cat.learningFocus}%</span>
+                          </div>
+                          <div className="w-full bg-border/60 h-1.5 rounded-full overflow-hidden">
+                            <div 
+                              className="bg-blue-500 h-full rounded-full transition-all duration-500" 
+                              style={{ width: `${cat.learningFocus}%` }}
+                            />
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
                   <div className="flex flex-wrap gap-2">
                     {cat.skills.map((skill, sIdx) => (
                       <span 

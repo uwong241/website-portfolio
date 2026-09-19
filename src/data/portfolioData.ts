@@ -12,6 +12,8 @@ export interface Project {
 export interface SkillCategory {
   category: string;
   skills: string[];
+  learningProgress?: number;
+  learningFocus?: number;
 }
 
 export interface TimelineNode {
@@ -33,22 +35,32 @@ export const PROFILE = {
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     category: "Linux & System Administration",
+    learningProgress: 90,
+    learningFocus: 80,
     skills: ["Arch Linux", "Debian", "Gentoo", "Fedora", "NixOS", "Linux CLI", "systemd", "SSH", "Package Management", "Filesystem Management", "Kernel Troubleshooting", "Server Administration"]
   },
   {
     category: "Virtualization & Infrastructure",
+    learningProgress: 70,
+    learningFocus: 90,
     skills: ["Proxmox VE", "KVM", "LXC", "Virtual Machines", "Containers", "Proxmox Clustering", "Corosync", "Homelab Infrastructure", "Self-hosted Services", "Network Storage"]
   },
   {
     category: "Networking",
+    learningProgress: 50,
+    learningFocus: 65,
     skills: ["TCP/IP", "IPv4 Subnetting", "Routing", "DHCP", "NAT", "Static IP", "Network Troubleshooting", "NFS", "MikroTik RouterOS", "MikroTik CHR", "Tailscale", "Subnet Routing", "WireGuard"]
   },
   {
     category: "Development",
+    learningProgress: 25,
+    learningFocus: 40,
     skills: ["Python", "Bash Scripting", "Git", "Linux Dev Environments"]
   },
   {
     category: "Cybersecurity",
+    learningProgress: 10,
+    learningFocus: 8,
     skills: ["Linux Security Fundamentals", "Network Security", "Penetration Testing Basics", "Attack Surface Awareness", "Infrastructure Security", "Defensive Security"]
   },
   {
