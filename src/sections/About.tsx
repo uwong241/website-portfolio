@@ -37,14 +37,14 @@ export const About = () => {
             {/* Narrative Story */}
             <div className="md:col-span-8 prose prose-lg text-secondary space-y-5 leading-relaxed">
               <p>
-                Saya <strong className="text-primary">{PROFILE.name}</strong>, seorang alumni <strong className="text-primary">SMP Al-Ikhlash Lumajang (Angkatan ke-15)</strong> yang saat ini melanjutkan pendidikan di <strong className="text-primary">SMK Muhammadiyah 2 Kota Malang</strong> mengambil konsentrasi jurusan <strong className="text-accent font-semibold">Teknik Komputer & Jaringan (TKJ)</strong>.
+                I am <strong className="text-primary">{PROFILE.name}</strong>, a graduate of <strong className="text-primary">SMP Al-Ikhlash Lumajang (15th Batch, Class of 2026)</strong> who is currently pursuing vocational studies at <strong className="text-primary">SMK Muhammadiyah 2 Kota Malang</strong>, majoring in <strong className="text-accent font-semibold">Computer Network Engineering (TKJ)</strong>.
               </p>
               <p>
-                Memiliki ketertarikan mendalam pada sistem operasi Linux, arsitektur jaringan, virtualisasi, dan infrastruktur homelab. Alih-alih sekadar mempelajari teori di kelas, saya secara aktif membangun serta memelihara lingkungan homelab fisik dan virtual: mengkonfigurasi dual-node Proxmox VE, routing MikroTik CHR, clustering server Armbian berdaya rendah, storage terpusat OpenMediaVault (NFS), serta eksperimen inferensi Local AI.
+                Driven by a deep curiosity for Linux operating systems, network engineering, virtualization, and homelab infrastructure. Rather than solely studying textbook theory, I actively build, maintain, and troubleshoot physical and virtualized homelab environments: configuring dual-node Proxmox VE clusters, routing with MikroTik CHR, low-power Armbian server deployments, centralized OpenMediaVault (NFS) storage, and local AI inference pipelines.
               </p>
               <div className="pt-2 flex flex-wrap gap-2 text-xs font-mono text-secondary">
                 <span className="px-3 py-1 rounded-md bg-surface border border-border">📍 Malang, East Java</span>
-                <span className="px-3 py-1 rounded-md bg-surface border border-border">🎓 Alumni SMP Al-Ikhlash Lumajang #15</span>
+                <span className="px-3 py-1 rounded-md bg-surface border border-border">🎓 SMP Al-Ikhlash Lumajang (Class of 2026)</span>
                 <span className="px-3 py-1 rounded-md bg-surface border border-border">🏫 SMK Muhammadiyah 2 Malang (TKJ)</span>
                 <span className="px-3 py-1 rounded-md bg-surface border border-border">🐧 Linux & Homelab</span>
               </div>
