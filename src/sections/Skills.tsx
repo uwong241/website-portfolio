@@ -20,15 +20,29 @@ export const Skills = () => {
             {SKILL_CATEGORIES.map((cat, idx) => (
               <Card key={idx} className="p-6 border border-border/80 bg-background-light flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center justify-between mb-3 pb-2 border-b border-border">
+                  <div className="flex items-center justify-between mb-4 pb-2 border-b border-border">
                     <h3 className="text-base font-bold text-primary">
                       {cat.category}
                     </h3>
                   </div>
 
-                  {/* Progress & Focus Metrics Bar */}
-                  {(cat.learningProgress !== undefined || cat.learningFocus !== undefined) && (
-                    <div className="mb-5 p-3 rounded-lg bg-surface/60 border border-border/60 space-y-2.5 font-mono text-xs">
+                  {/* Skills Tag Pills First */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {cat.skills.map((skill, sIdx) => (
+                      <span 
+                        key={sIdx}
+                        className="text-xs px-2.5 py-1 bg-surface border border-border/70 rounded-md font-mono text-secondary hover:border-accent hover:text-primary transition-colors"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Progress & Focus Metrics Bar Placed at the Bottom */}
+                {(cat.learningProgress !== undefined || cat.learningFocus !== undefined) && (
+                  <div className="mt-auto pt-4 border-t border-border/60">
+                    <div className="p-3 rounded-lg bg-surface/60 border border-border/60 space-y-2.5 font-mono text-xs">
                       {cat.learningProgress !== undefined && (
                         <div>
                           <div className="flex justify-between items-center mb-1">
@@ -59,19 +73,8 @@ export const Skills = () => {
                         </div>
                       )}
                     </div>
-                  )}
-
-                  <div className="flex flex-wrap gap-2">
-                    {cat.skills.map((skill, sIdx) => (
-                      <span 
-                        key={sIdx}
-                        className="text-xs px-2.5 py-1 bg-surface border border-border/70 rounded-md font-mono text-secondary hover:border-accent hover:text-primary transition-colors"
-                      >
-                        {skill}
-                      </span>
-                    ))}
                   </div>
-                </div>
+                )}
               </Card>
             ))}
           </div>
