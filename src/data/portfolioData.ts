@@ -129,6 +129,6 @@ export const TIMELINE: TimelineNode[] = [
   { title: "Local AI Infrastructure", description: "Running GGUF models locally via llama.cpp, resource profiling, and local AI agent integration." },
   { title: "Proxmox & Virtualization", description: "Deploying KVM, LXC, bridges, and Corosync high-availability clustering." },
   { title: "Networking Fundamentals", description: "TCP/IP, IPv4 subnetting, static routing, DHCP, NAT, and packet capture." },
-  { title: "MikroTik Routing", description: "Virtual router configuration, firewall rules, gateway integration, and subnet isolation." },
-  { title: "Tailscale & VPNs", description: "Encrypted mesh VPN overlays and subnet routing for secure remote management." }
+  { title: "Tailscale & VPNs", description: "Encrypted mesh VPN overlays and subnet routing for secure remote management." },
+  { title: "MikroTik Routing", description: "Virtual router configuration, firewall rules, gateway integration, and subnet isolation." }
 ];
