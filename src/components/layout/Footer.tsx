@@ -6,7 +6,7 @@ export const Footer = () => {
       <Container>
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
-            <p className="font-mono text-primary font-semibold">Ahmad Daffa</p>
+            <p className="font-mono text-primary font-semibold">Ahmad Daffa Arief</p>
             <p className="text-xs text-secondary mt-1">Linux, Infrastructure & Cybersecurity Enthusiast</p>
           </div>
 
@@ -18,7 +18,7 @@ export const Footer = () => {
           </div>
 
           <p className="text-xs text-secondary font-mono">
-            © {new Date().getFullYear()} Ahmad Daffa. Built with React & Tailwind CSS.
+            © {new Date().getFullYear()} Ahmad Daffa Arief. Built with React & Tailwind CSS.
           </p>
         </div>
       </Container>

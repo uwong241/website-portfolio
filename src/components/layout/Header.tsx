@@ -9,7 +9,7 @@ export const Header = () => {
       <Container>
         <div className="flex items-center justify-between h-16">
           <a href="#" className="font-bold tracking-tight text-primary font-mono flex items-center gap-2">
-            <span>Ahmad Daffa</span>
+            <span>Ahmad Daffa Arief</span>
             <span className="text-accent font-semibold">~/infra</span>
           </a>
           
