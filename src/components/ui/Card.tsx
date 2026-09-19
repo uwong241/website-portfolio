@@ -6,8 +6,12 @@ interface CardProps {
   variant?: 'default' | 'accent';
 }
 
-export const Card = ({ children, className = '', variant = 'default' }: CardProps) => {
-  return <div className={`border p-4 rounded ${className}`}>{children}</div>;
+export const Card = ({ children, className = '' }: CardProps) => {
+  return (
+    <div className={`border rounded-xl transition-all duration-300 card-lift ${className}`}>
+      {children}
+    </div>
+  );
 };
 
 export default Card;
