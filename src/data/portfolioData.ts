@@ -65,6 +65,8 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   },
   {
     category: "Local AI Infrastructure",
+    learningProgress: 50,
+    learningFocus: 80,
     skills: ["llama.cpp", "GGUF Models", "Local LLM Inference", "Local AI Agents", "TTS Experimentation", "AI Infrastructure", "Resource Optimization"]
   }
 ];
