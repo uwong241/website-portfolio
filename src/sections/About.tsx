@@ -18,7 +18,7 @@ export const About = () => {
                 {/* Subtle outer glow on dark mode */}
                 <div className="absolute -inset-1.5 bg-gradient-to-r from-accent to-blue-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
                 
-                <div className="relative w-64 h-80 sm:w-72 sm:h-96 rounded-2xl overflow-hidden border-2 border-border shadow-xl bg-surface">
+                <div className="relative w-64 h-80 sm:w-72 sm:h-96 rounded-2xl overflow-hidden border-2 border-border shadow-xl bg-surface card-lift">
                   <img
                     src="/profile.jpeg"
                     alt={PROFILE.name}
@@ -28,7 +28,7 @@ export const About = () => {
                   {/* Bottom badge */}
                   <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 pt-10 text-white">
                     <p className="font-mono text-sm font-bold">{PROFILE.name}</p>
-                    <p className="text-xs text-white/80 font-mono">TKJ Student · Malang</p>
+                    <p className="text-xs text-white/80 font-mono">Self-Taught · TKJ Student</p>
                   </div>
                 </div>
               </div>
@@ -37,14 +37,18 @@ export const About = () => {
             {/* Narrative Story */}
             <div className="md:col-span-8 prose prose-lg text-secondary space-y-5 leading-relaxed">
               <p>
-                I am <strong className="text-primary">{PROFILE.name}</strong>, a graduate of <strong className="text-primary">SMP Al-Ikhlash Lumajang (15th Batch, Class of 2026)</strong> who is currently pursuing vocational studies at <strong className="text-primary">SMK Muhammadiyah 2 Kota Malang</strong>, majoring in <strong className="text-accent font-semibold">Computer Network Engineering (TKJ)</strong>.
+                I am <strong className="text-primary">{PROFILE.name}</strong>, a passionate <strong className="text-accent">self-taught learner</strong> and graduate of <strong className="text-primary">SMP Al-Ikhlash Lumajang (15th Batch, Class of 2026)</strong>, currently pursuing formal vocational education at <strong className="text-primary">SMK Muhammadiyah 2 Kota Malang</strong> majoring in <strong className="text-accent font-semibold">Computer Network Engineering (TKJ)</strong>.
               </p>
               <p>
-                Driven by a deep curiosity for Linux operating systems, network engineering, virtualization, and homelab infrastructure. Rather than solely studying textbook theory, I actively build, maintain, and troubleshoot physical and virtualized homelab environments: configuring dual-node Proxmox VE clusters, routing with MikroTik CHR, low-power Armbian server deployments, centralized OpenMediaVault (NFS) storage, and local AI inference pipelines.
+                My journey into the world of Information Technology began back in the <strong className="text-primary">9th grade (3rd year of junior high school)</strong>. Driven by relentless self-study and curiosity, I immersed myself in operating systems, networking fundamentals, and computer hardware.
+              </p>
+              <p>
+                Rather than solely studying textbook theory, I actively build, maintain, and troubleshoot physical and virtualized homelab environments: configuring dual-node Proxmox VE clusters, routing with MikroTik CHR, low-power Armbian server deployments, centralized OpenMediaVault (NFS) storage, and local AI inference pipelines.
               </p>
               <div className="pt-2 flex flex-wrap gap-2 text-xs font-mono text-secondary">
                 <span className="px-3 py-1 rounded-md bg-surface border border-border">📍 Malang, East Java</span>
-                <span className="px-3 py-1 rounded-md bg-surface border border-border">🎓 SMP Al-Ikhlash Lumajang (Class of 2026)</span>
+                <span className="px-3 py-1 rounded-md bg-surface border border-border">💡 Self-Taught Since 9th Grade</span>
+                <span className="px-3 py-1 rounded-md bg-surface border border-border">🎓 SMP Al-Ikhlash Lumajang (2026)</span>
                 <span className="px-3 py-1 rounded-md bg-surface border border-border">🏫 SMK Muhammadiyah 2 Malang (TKJ)</span>
                 <span className="px-3 py-1 rounded-md bg-surface border border-border">🐧 Linux & Homelab</span>
               </div>
