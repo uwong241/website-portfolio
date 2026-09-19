@@ -54,7 +54,7 @@ export const Contact = () => {
         <div className="max-w-xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-accent text-sm font-semibold tracking-wider uppercase mb-2 block">Get in Touch</span>
-            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">Let's build something exceptional.</h2>
+            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">Let's build something exceptional</h2>
             <p className="text-secondary text-base">
               Have a question, an opportunity, or want to discuss Linux, homelabs, or systems architecture? Drop a message below.
             </p>

@@ -9,7 +9,7 @@ export const About = () => {
       <Container>
         <div className="max-w-5xl mx-auto">
           <span className="text-accent text-sm font-semibold tracking-wider uppercase mb-2 block">About Me</span>
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-12">Hands-on infrastructure & systems engineering.</h2>
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-12">Hands-on infrastructure & systems engineering</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center mb-16">
             {/* Profile Photo */}
