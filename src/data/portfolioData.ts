@@ -24,7 +24,7 @@ export interface TimelineNode {
 
 export const PROFILE = {
   name: "Ahmad Daffa Arief",
-  status: "Vocational High School Student at SMK Muhammadiyah 2 Malang (TKJ)",
+  status: "Vocational High School (SMK) Student · Major: TKJ",
   tagline: "Linux & Infrastructure Enthusiast",
   bio: "Vocational student majoring in Computer Network Engineering (TKJ) with hands-on homelab experience in Linux, networking, virtualization, and infrastructure architecture.",
   github: "https://github.com/wehrmacht241",
