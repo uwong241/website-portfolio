@@ -15,7 +15,7 @@ function App() {
     <BrowserRouter>
       <CustomCursor />
       <ConstellationBackground />
-      <div className="min-h-screen flex flex-col font-sans selection:bg-accent selection:text-white cursor-default md:cursor-none text-primary bg-background">
+      <div className="min-h-screen flex flex-col font-sans selection:bg-accent selection:text-white cursor-default text-primary bg-background">
         <Header />
         
         <main className="flex-grow">
