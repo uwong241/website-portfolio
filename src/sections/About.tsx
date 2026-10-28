@@ -12,7 +12,7 @@ interface Certificate {
   credentialId: string;
   verifyUrl: string;
   badgeColor: string;
-  svgUrl: string;
+  imageUrl: string;
   pdfUrl: string;
 }
 
@@ -37,7 +37,7 @@ export const About = () => {
       credentialId: 'ERZR7YERNZYV',
       verifyUrl: 'https://dicoding.com/certificates/ERZR7YERNZYV',
       badgeColor: 'border-amber-500/40 bg-amber-500/10 text-amber-400',
-      svgUrl: '/cert-aws-cloud.svg',
+      imageUrl: '/cert-aws-cloud.svg',
       pdfUrl: '/cert-aws-cloud.pdf',
     },
     {
@@ -48,7 +48,7 @@ export const About = () => {
       credentialId: 'ERZRLKVVQZYV',
       verifyUrl: 'https://dicoding.com/certificates/ERZRLKVVQZYV',
       badgeColor: 'border-blue-500/40 bg-blue-500/10 text-blue-400',
-      svgUrl: '/cert-project-management.svg',
+      imageUrl: '/cert-project-management.svg',
       pdfUrl: '/cert-project-management.pdf',
     },
     {
@@ -59,7 +59,7 @@ export const About = () => {
       credentialId: '1RXYD2LV3XVM',
       verifyUrl: 'https://dicoding.com/certificates/1RXYD2LV3XVM',
       badgeColor: 'border-purple-500/40 bg-purple-500/10 text-purple-400',
-      svgUrl: '/cert-spec-driven-dev.svg',
+      imageUrl: '/cert-spec-driven-dev.svg',
       pdfUrl: '/cert-spec-driven-dev.pdf',
     },
   ];
@@ -127,16 +127,16 @@ export const About = () => {
             </Card>
           </div>
 
-          {/* Visual Certificate Gallery Cards */}
+          {/* Pure Certificate Image Cards Gallery */}
           <div className="border-t border-border/80 pt-12">
             <div className="flex items-center justify-between mb-8">
               <div>
                 <span className="text-accent text-xs font-mono tracking-wider uppercase font-semibold block mb-1">
-                  // CREDENTIAL GALLERY
+                  // CERTIFICATIONS
                 </span>
-                <h3 className="text-2xl font-bold text-primary tracking-tight">Accredited Certificates</h3>
+                <h3 className="text-2xl font-bold text-primary tracking-tight">Verified Certificates</h3>
               </div>
-              <span className="text-xs font-mono text-secondary hidden sm:inline-block">Click image card to zoom & expand 🔍</span>
+              <span className="text-xs font-mono text-secondary hidden sm:inline-block">Click certificate image to zoom 🔍</span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -144,36 +144,30 @@ export const About = () => {
                 <div
                   key={cert.id}
                   onClick={() => setActiveCert(cert)}
-                  className="group relative rounded-2xl overflow-hidden border border-border/80 bg-surface cursor-pointer card-lift shadow-xl hover:border-accent/80 transition-all duration-300 flex flex-col justify-between"
+                  className="group relative rounded-2xl overflow-hidden border border-border/80 bg-surface cursor-pointer card-lift shadow-xl hover:border-accent/80 transition-all duration-300"
                 >
-                  {/* Visual Certificate Image Frame */}
-                  <div className="relative aspect-[1.414/1] bg-slate-950 overflow-hidden border-b border-border/60 flex items-center justify-center p-2">
+                  {/* Clean Certificate Image Thumbnail */}
+                  <div className="relative aspect-[1.414/1] bg-slate-950 overflow-hidden flex items-center justify-center p-2">
                     <img
-                      src={cert.svgUrl}
+                      src={cert.imageUrl}
                       alt={cert.title}
                       className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 filter drop-shadow-md"
                       loading="lazy"
                     />
                     
-                    {/* Hover Overlay Hint */}
+                    {/* Hover Zoom Hint */}
                     <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 text-white font-mono text-xs backdrop-blur-sm">
                       <span className="p-2 rounded-full bg-accent text-slate-950 font-bold text-sm">🔍</span>
-                      <span>Click to Zoom & View PDF</span>
+                      <span>Zoom Image</span>
                     </div>
                   </div>
 
-                  {/* Card Bottom Meta */}
-                  <div className="p-4 bg-surface-subtle/40">
-                    <div className="flex items-center justify-between mb-1.5">
-                      <span className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded bg-accent/10 border border-accent/20 text-accent">
-                        {cert.issuer}
-                      </span>
-                      <span className="text-[10px] font-mono text-secondary/70">{cert.issuedDate}</span>
-                    </div>
-
-                    <h4 className="text-sm font-bold text-primary group-hover:text-accent transition-colors line-clamp-1">
+                  {/* Title Bar */}
+                  <div className="p-3.5 bg-surface-subtle/50 border-t border-border/60 flex items-center justify-between">
+                    <span className="text-xs font-bold text-primary group-hover:text-accent transition-colors line-clamp-1 font-mono">
                       {cert.title}
-                    </h4>
+                    </span>
+                    <span className="text-xs text-accent group-hover:translate-x-0.5 transition-transform">➔</span>
                   </div>
                 </div>
               ))}
@@ -182,7 +176,7 @@ export const About = () => {
         </div>
       </Container>
 
-      {/* Interactive Modal Image/PDF Zoom with Backdrop Blur */}
+      {/* Interactive Modal Pure Certificate Image Zoom */}
       {activeCert && (
         <div 
           className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md animate-in fade-in duration-200"
@@ -221,29 +215,27 @@ export const About = () => {
               </div>
             </div>
 
-            {/* Modal Full High-Res Image Display */}
-            <div className="flex-grow p-3 sm:p-6 bg-black/60 overflow-auto flex items-center justify-center min-h-[420px]">
+            {/* Modal Certificate Image Preview */}
+            <div className="flex-grow p-4 sm:p-8 bg-black/60 overflow-auto flex items-center justify-center min-h-[420px]">
               <img
-                src={activeCert.svgUrl}
+                src={activeCert.imageUrl}
                 alt={activeCert.title}
-                className="max-w-full max-h-[70vh] object-contain rounded-lg border border-border/60 shadow-2xl"
+                className="max-w-full max-h-[72vh] object-contain rounded-xl border border-border/60 shadow-2xl"
               />
             </div>
 
             {/* Modal Footer Actions */}
             <div className="px-5 py-3 border-t border-border bg-surface-subtle/50 flex items-center justify-between text-xs font-mono text-secondary">
               <span>Issued: {activeCert.issuedDate}</span>
-              <div className="flex items-center gap-4">
-                <a
-                  href={activeCert.pdfUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-accent hover:underline flex items-center gap-1"
-                >
-                  <span>Open Full PDF</span>
-                  <span>↗</span>
-                </a>
-              </div>
+              <a
+                href={activeCert.pdfUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent hover:underline flex items-center gap-1"
+              >
+                <span>View Full PDF</span>
+                <span>↗</span>
+              </a>
             </div>
           </div>
         </div>
