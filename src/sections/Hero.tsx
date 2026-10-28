@@ -65,18 +65,10 @@ export const Hero = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button 
               size="lg" 
-              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('homelab')?.scrollIntoView({ behavior: 'smooth' })}
               className="hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-lg shadow-accent/20"
             >
-              View Projects →
-            </Button>
-            <Button 
-              size="lg" 
-              variant="secondary" 
-              onClick={() => document.getElementById('homelab')?.scrollIntoView({ behavior: 'smooth' })}
-              className="hover:scale-[1.02] active:scale-[0.98] transition-transform"
-            >
-              Explore Homelab
+              Explore Homelab →
             </Button>
             <Button 
               size="lg" 

@@ -7,13 +7,14 @@ export const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <p className="font-mono text-primary font-semibold">Ahmad Daffa Arief</p>
-            <p className="text-xs text-secondary mt-1">Linux, Infrastructure & Cybersecurity Enthusiast</p>
+            <p className="text-xs text-secondary mt-1">Linux, Infrastructure & Systems Enthusiast</p>
           </div>
 
           <div className="flex items-center space-x-6 text-xs font-mono">
             <a href="#about" className="hover:text-primary transition-colors">About</a>
-            <a href="#projects" className="hover:text-primary transition-colors">Projects</a>
+            <a href="#skills" className="hover:text-primary transition-colors">Skills</a>
             <a href="#homelab" className="hover:text-primary transition-colors">Homelab</a>
+            <a href="#education" className="hover:text-primary transition-colors">Education</a>
             <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
           </div>
 

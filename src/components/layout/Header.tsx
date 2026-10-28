@@ -21,9 +21,7 @@ export const Header = () => {
           <div className="hidden md:flex items-center space-x-6 text-sm text-secondary font-mono">
             <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="hover:text-primary transition-colors">about</a>
             <a href="#skills" onClick={(e) => handleNavClick(e, 'skills')} className="hover:text-primary transition-colors">skills</a>
-            <a href="#projects" onClick={(e) => handleNavClick(e, 'projects')} className="hover:text-primary transition-colors">projects</a>
             <a href="#homelab" onClick={(e) => handleNavClick(e, 'homelab')} className="hover:text-primary transition-colors">homelab</a>
-            <a href="#journey" onClick={(e) => handleNavClick(e, 'journey')} className="hover:text-primary transition-colors">journey</a>
             <a href="#education" onClick={(e) => handleNavClick(e, 'education')} className="hover:text-primary transition-colors">education</a>
             <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="hover:text-accent transition-colors">contact</a>
           </div>
