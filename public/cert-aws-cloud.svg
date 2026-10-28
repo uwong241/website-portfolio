@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d121d" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#34d399" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="560" fill="url(#bg)" rx="16" />
+  
+  <!-- Fancy Certificate Outer Border -->
+  <rect x="20" y="20" width="760" height="520" fill="none" stroke="url(#borderGrad)" stroke-width="3" rx="12" opacity="0.8" />
+  <rect x="28" y="28" width="744" height="504" fill="none" stroke="#1e293b" stroke-width="1.5" rx="8" />
+
+  <!-- Corner Ornaments -->
+  <circle cx="40" cy="40" r="8" fill="#38bdf8" opacity="0.5" />
+  <circle cx="760" cy="40" r="8" fill="#38bdf8" opacity="0.5" />
+  <circle cx="40" cy="520" r="8" fill="#38bdf8" opacity="0.5" />
+  <circle cx="760" cy="520" r="8" fill="#38bdf8" opacity="0.5" />
+
+  <!-- Header Branding -->
+  <text x="400" y="85" font-family="sans-serif" font-size="14" font-weight="700" fill="#38bdf8" text-anchor="middle" letter-spacing="3">CERTIFICATE OF COMPLETION</text>
+  <line x1="250" y1="100" x2="550" y2="100" stroke="#334155" stroke-width="1" />
+
+  <!-- Issuer -->
+  <text x="400" y="140" font-family="sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">Dicoding Indonesia × AWS</text>
+
+  <!-- Recipient -->
+  <text x="400" y="185" font-family="sans-serif" font-size="13" fill="#64748b" text-anchor="middle">PROUDLY PRESENTED TO</text>
+  <text x="400" y="230" font-family="sans-serif" font-size="28" font-weight="800" fill="#f8fafc" text-anchor="middle">Ahmad Daffa Arief</text>
+  <line x1="280" y1="250" x2="520" y2="250" stroke="#38bdf8" stroke-width="2" />
+
+  <!-- Course Title -->
+  <text x="400" y="290" font-family="sans-serif" font-size="13" fill="#64748b" text-anchor="middle">FOR SUCCESSFULLY COMPLETING THE COURSE</text>
+  <text x="400" y="335" font-family="sans-serif" font-size="22" font-weight="700" fill="#38bdf8" text-anchor="middle">Belajar Dasar Cloud dan Gen AI di AWS</text>
+
+  <!-- Details Footer -->
+  <text x="100" y="460" font-family="monospace" font-size="12" fill="#94a3b8">ISSUED: 27 Oktober 2026</text>
+  <text x="100" y="480" font-family="monospace" font-size="11" fill="#64748b">ID: ERZR7YERNZYV</text>
+
+  <!-- Verified Badge -->
+  <g transform="translate(640, 430)">
+    <circle cx="30" cy="30" r="26" fill="#0284c7" opacity="0.2" />
+    <circle cx="30" cy="30" r="20" fill="#0369a1" />
+    <path d="M22 30 L27 35 L38 23" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    <text x="30" y="62" font-family="sans-serif" font-size="9" font-weight="bold" fill="#38bdf8" text-anchor="middle">VERIFIED</text>
+  </g>
+</svg>

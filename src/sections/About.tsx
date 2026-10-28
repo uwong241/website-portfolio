@@ -9,12 +9,10 @@ interface Certificate {
   title: string;
   issuer: string;
   issuedDate: string;
-  validUntil: string;
   credentialId: string;
   verifyUrl: string;
   badgeColor: string;
-  description: string;
-  skills: string[];
+  svgUrl: string;
   pdfUrl: string;
 }
 
@@ -36,12 +34,10 @@ export const About = () => {
       title: 'Belajar Dasar Cloud dan Gen AI di AWS',
       issuer: 'Dicoding Indonesia × AWS',
       issuedDate: '27 Oktober 2026',
-      validUntil: '27 Oktober 2029',
       credentialId: 'ERZR7YERNZYV',
       verifyUrl: 'https://dicoding.com/certificates/ERZR7YERNZYV',
       badgeColor: 'border-amber-500/40 bg-amber-500/10 text-amber-400',
-      description: 'Kompetensi cloud computing standar AWS: Amazon EC2, VPC Networking, S3/EBS storage, IAM security, monitoring CloudWatch, dan fondasi Generative AI.',
-      skills: ['AWS Cloud', 'Amazon EC2', 'VPC Networking', 'IAM Security', 'Gen AI Basics'],
+      svgUrl: '/cert-aws-cloud.svg',
       pdfUrl: '/cert-aws-cloud.pdf',
     },
     {
@@ -49,12 +45,10 @@ export const About = () => {
       title: 'Belajar Dasar Manajemen Proyek',
       issuer: 'Dicoding Indonesia',
       issuedDate: '29 Maret 2026',
-      validUntil: '29 Maret 2029',
       credentialId: 'ERZRLKVVQZYV',
       verifyUrl: 'https://dicoding.com/certificates/ERZRLKVVQZYV',
       badgeColor: 'border-blue-500/40 bg-blue-500/10 text-blue-400',
-      description: 'Pondasi manajemen proyek terstruktur: fase siklus inisiasi hingga penutupan proyek, metodologi Waterfall vs Agile, Lean, dan kolaborasi tim lintas fungsi.',
-      skills: ['Project Lifecycle', 'Agile & Waterfall', 'Lean Methodology', 'Risk Management'],
+      svgUrl: '/cert-project-management.svg',
       pdfUrl: '/cert-project-management.pdf',
     },
     {
@@ -62,12 +56,10 @@ export const About = () => {
       title: 'Spec-Driven Development dengan Kiro',
       issuer: 'Dicoding Indonesia',
       issuedDate: '25 Juni 2026',
-      validUntil: '25 Juni 2029',
       credentialId: '1RXYD2LV3XVM',
       verifyUrl: 'https://dicoding.com/certificates/1RXYD2LV3XVM',
       badgeColor: 'border-purple-500/40 bg-purple-500/10 text-purple-400',
-      description: 'Penerapan siklus Spec-Driven Development (Requirements, Design, hingga Task Implementation) menggunakan Kiro untuk workflow AI-assisted terstandar profesional.',
-      skills: ['Spec-Driven Dev', 'Kiro AI Tooling', 'Prompt Engineering for SDD', 'Code Quality & Review'],
+      svgUrl: '/cert-spec-driven-dev.svg',
       pdfUrl: '/cert-spec-driven-dev.pdf',
     },
   ];
@@ -83,7 +75,6 @@ export const About = () => {
             {/* Profile Photo */}
             <div className="md:col-span-4 flex justify-center">
               <div className="relative group">
-                {/* Subtle outer glow on dark mode */}
                 <div className="absolute -inset-1.5 bg-gradient-to-r from-accent to-blue-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
                 
                 <div className="relative w-64 h-80 sm:w-72 sm:h-96 rounded-2xl overflow-hidden border-2 border-border shadow-xl bg-surface card-lift">
@@ -93,7 +84,6 @@ export const About = () => {
                     className="w-full h-full object-cover object-top filter contrast-[1.03] group-hover:scale-[1.02] transition-transform duration-300"
                     loading="lazy"
                   />
-                  {/* Bottom badge */}
                   <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 pt-10 text-white">
                     <p className="font-mono text-sm font-bold">{PROFILE.name}</p>
                     <p className="text-xs text-white/80 font-mono">Self-Taught · TKJ Student</p>
@@ -137,16 +127,16 @@ export const About = () => {
             </Card>
           </div>
 
-          {/* Verified Certification Collection */}
+          {/* Visual Certificate Gallery Cards */}
           <div className="border-t border-border/80 pt-12">
             <div className="flex items-center justify-between mb-8">
               <div>
                 <span className="text-accent text-xs font-mono tracking-wider uppercase font-semibold block mb-1">
-                  // VERIFIED CREDENTIALS
+                  // CREDENTIAL GALLERY
                 </span>
-                <h3 className="text-2xl font-bold text-primary tracking-tight">Certificates & Accreditations</h3>
+                <h3 className="text-2xl font-bold text-primary tracking-tight">Accredited Certificates</h3>
               </div>
-              <span className="text-xs font-mono text-secondary hidden sm:inline-block">Click to preview & zoom 🔍</span>
+              <span className="text-xs font-mono text-secondary hidden sm:inline-block">Click image card to zoom & expand 🔍</span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -154,39 +144,36 @@ export const About = () => {
                 <div
                   key={cert.id}
                   onClick={() => setActiveCert(cert)}
-                  className="bento-card p-5 rounded-2xl cursor-pointer group flex flex-col justify-between hover:border-accent/80 hover:scale-[1.02] transition-all duration-300 shadow-lg relative overflow-hidden"
+                  className="group relative rounded-2xl overflow-hidden border border-border/80 bg-surface cursor-pointer card-lift shadow-xl hover:border-accent/80 transition-all duration-300 flex flex-col justify-between"
                 >
-                  <div>
-                    {/* Header Badge */}
-                    <div className="flex items-center justify-between mb-3">
-                      <span className={`text-[10px] font-mono px-2 py-0.5 rounded border font-semibold ${cert.badgeColor}`}>
-                        {cert.issuer}
-                      </span>
-                      <span className="text-xs text-secondary/70 group-hover:text-accent transition-colors font-mono">
-                        Zoom 🔍
-                      </span>
-                    </div>
-
-                    <h4 className="text-base font-bold text-primary mb-2 group-hover:text-accent transition-colors leading-snug">
-                      {cert.title}
-                    </h4>
-
-                    <p className="text-xs text-secondary leading-relaxed mb-4">
-                      {cert.description}
-                    </p>
-
-                    <div className="flex flex-wrap gap-1.5 mb-4">
-                      {cert.skills.map((skill, sIdx) => (
-                        <span key={sIdx} className="text-[10px] px-2 py-0.5 rounded bg-surface border border-border/70 text-secondary font-mono">
-                          {skill}
-                        </span>
-                      ))}
+                  {/* Visual Certificate Image Frame */}
+                  <div className="relative aspect-[1.414/1] bg-slate-950 overflow-hidden border-b border-border/60 flex items-center justify-center p-2">
+                    <img
+                      src={cert.svgUrl}
+                      alt={cert.title}
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 filter drop-shadow-md"
+                      loading="lazy"
+                    />
+                    
+                    {/* Hover Overlay Hint */}
+                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 text-white font-mono text-xs backdrop-blur-sm">
+                      <span className="p-2 rounded-full bg-accent text-slate-950 font-bold text-sm">🔍</span>
+                      <span>Click to Zoom & View PDF</span>
                     </div>
                   </div>
 
-                  <div className="pt-3 border-t border-border/60 flex items-center justify-between text-[11px] font-mono text-secondary">
-                    <span>ID: {cert.credentialId}</span>
-                    <span className="text-accent group-hover:underline">View Certificate ➔</span>
+                  {/* Card Bottom Meta */}
+                  <div className="p-4 bg-surface-subtle/40">
+                    <div className="flex items-center justify-between mb-1.5">
+                      <span className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded bg-accent/10 border border-accent/20 text-accent">
+                        {cert.issuer}
+                      </span>
+                      <span className="text-[10px] font-mono text-secondary/70">{cert.issuedDate}</span>
+                    </div>
+
+                    <h4 className="text-sm font-bold text-primary group-hover:text-accent transition-colors line-clamp-1">
+                      {cert.title}
+                    </h4>
                   </div>
                 </div>
               ))}
@@ -195,65 +182,68 @@ export const About = () => {
         </div>
       </Container>
 
-      {/* Interactive Modal Zoom with Backdrop Blur */}
+      {/* Interactive Modal Image/PDF Zoom with Backdrop Blur */}
       {activeCert && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md animate-in fade-in duration-200"
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md animate-in fade-in duration-200"
           onClick={() => setActiveCert(null)}
         >
           <div 
-            className="relative w-full max-w-4xl bg-surface border border-border rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh] animate-in zoom-in-95 duration-300"
+            className="relative w-full max-w-5xl bg-surface border border-border rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[92vh] animate-in zoom-in-95 duration-300"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="flex items-center justify-between px-6 py-4 border-b border-border bg-surface-subtle/50">
-              <div className="flex items-center gap-3">
+            <div className="flex items-center justify-between px-5 py-3.5 border-b border-border bg-surface-subtle/60">
+              <div className="flex items-center gap-2.5">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
                 <div>
-                  <h4 className="text-sm sm:text-base font-bold text-primary">{activeCert.title}</h4>
-                  <p className="text-xs text-secondary font-mono">Issuer: {activeCert.issuer} · Credential ID: {activeCert.credentialId}</p>
+                  <h4 className="text-xs sm:text-sm font-bold text-primary">{activeCert.title}</h4>
+                  <p className="text-[11px] text-secondary font-mono">{activeCert.issuer} · ID: {activeCert.credentialId}</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2">
                 <a
                   href={activeCert.verifyUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hidden sm:inline-flex items-center gap-1.5 text-xs font-mono text-accent hover:underline bg-accent/10 px-3 py-1.5 rounded-lg border border-accent/30"
+                  className="hidden sm:inline-flex items-center gap-1 text-xs font-mono text-accent hover:underline bg-accent/10 px-3 py-1 rounded-md border border-accent/30"
                 >
                   Verify Online ↗
                 </a>
                 <button
                   onClick={() => setActiveCert(null)}
-                  className="p-1.5 text-secondary hover:text-primary rounded-lg hover:bg-surface border border-border/80 text-sm font-mono transition-colors"
-                  aria-label="Close Preview"
+                  className="p-1.5 text-secondary hover:text-primary rounded-md hover:bg-surface border border-border/80 text-xs font-mono transition-colors"
+                  aria-label="Close Zoom"
                 >
                   ✕
                 </button>
               </div>
             </div>
 
-            {/* Modal PDF Viewer / Zoom Body */}
-            <div className="flex-grow p-4 bg-black/40 overflow-hidden flex items-center justify-center min-h-[460px]">
-              <iframe
-                src={`${activeCert.pdfUrl}#toolbar=0&navpanes=0&scrollbar=1`}
-                title={activeCert.title}
-                className="w-full h-[65vh] rounded-xl border border-border shadow-inner bg-slate-900"
+            {/* Modal Full High-Res Image Display */}
+            <div className="flex-grow p-3 sm:p-6 bg-black/60 overflow-auto flex items-center justify-center min-h-[420px]">
+              <img
+                src={activeCert.svgUrl}
+                alt={activeCert.title}
+                className="max-w-full max-h-[70vh] object-contain rounded-lg border border-border/60 shadow-2xl"
               />
             </div>
 
-            {/* Modal Footer */}
-            <div className="px-6 py-3 border-t border-border bg-surface-subtle/40 flex items-center justify-between text-xs font-mono text-secondary">
-              <span>Valid until: {activeCert.validUntil}</span>
-              <a
-                href={activeCert.pdfUrl}
-                download
-                className="text-primary hover:text-accent flex items-center gap-1 transition-colors"
-              >
-                <span>Download PDF</span>
-                <span>↓</span>
-              </a>
+            {/* Modal Footer Actions */}
+            <div className="px-5 py-3 border-t border-border bg-surface-subtle/50 flex items-center justify-between text-xs font-mono text-secondary">
+              <span>Issued: {activeCert.issuedDate}</span>
+              <div className="flex items-center gap-4">
+                <a
+                  href={activeCert.pdfUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent hover:underline flex items-center gap-1"
+                >
+                  <span>Open Full PDF</span>
+                  <span>↗</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
