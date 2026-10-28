@@ -27,7 +27,7 @@ export const PROFILE = {
   status: "Vocational High School (SMK) Student · Major: TKJ",
   tagline: "Linux & Infrastructure Enthusiast",
   bio: "Vocational student majoring in Computer Network Engineering (TKJ) with hands-on homelab experience in Linux, networking, virtualization, and infrastructure architecture.",
-  github: "https://github.com/wehrmacht241",
+  github: "https://github.com/uwong241",
   linkedin: "https://linkedin.com/in/example",
   email: "ahmaddaffaakun23655@gmail.com"
 };
