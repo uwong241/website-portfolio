@@ -120,20 +120,20 @@ export const About = () => {
                 <div
                   key={cert.id}
                   onClick={() => setActiveCert(cert)}
-                  className="group relative rounded-2xl overflow-hidden border border-border/80 bg-surface cursor-pointer card-lift shadow-xl hover:border-accent/80 transition-all duration-300"
+                  className="group relative rounded-2xl overflow-hidden border border-border/80 bg-surface cursor-pointer card-lift shadow-xl hover:border-accent/80 transition-all duration-500"
                 >
                   <div className="relative aspect-[1.414/1] bg-slate-950 overflow-hidden flex items-center justify-center p-1.5">
                     <img
                       src={cert.imageUrl}
                       alt={cert.title}
-                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 rounded"
+                      className="w-full h-full object-contain group-hover:scale-105 active:scale-95 transition-transform duration-700 ease-out rounded"
                       loading="lazy"
                     />
                     
-                    {/* Hover Hint */}
-                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 text-white font-mono text-xs backdrop-blur-xs">
-                      <span className="p-2 rounded-full bg-accent text-slate-950 font-bold text-sm">🔍</span>
-                      <span>Zoom</span>
+                    {/* Slow Blur Hover Hint */}
+                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center gap-2 text-white font-mono text-xs backdrop-blur-sm">
+                      <span className="p-2.5 rounded-full bg-accent text-slate-950 font-bold text-sm shadow-lg group-hover:scale-110 transition-transform duration-500">🔍</span>
+                      <span className="tracking-wider font-semibold">Slow Zoom</span>
                     </div>
                   </div>
                 </div>
@@ -143,14 +143,14 @@ export const About = () => {
         </div>
       </Container>
 
-      {/* Simple Image Modal Zoom */}
+      {/* Slow Easing Smooth Zoom Modal */}
       {activeCert && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/90 backdrop-blur-md animate-in fade-in duration-200"
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/90 backdrop-blur-md transition-all duration-700 ease-out animate-in fade-in"
           onClick={() => setActiveCert(null)}
         >
           <div 
-            className="relative w-full max-w-5xl bg-surface border border-border rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[92vh] animate-in zoom-in-95 duration-300"
+            className="relative w-full max-w-5xl bg-surface border border-border/80 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[92vh] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] transform scale-100 animate-in zoom-in-90"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
@@ -165,12 +165,12 @@ export const About = () => {
               </button>
             </div>
 
-            {/* Modal Certificate PNG Image Display */}
-            <div className="flex-grow p-3 sm:p-6 bg-black/80 overflow-auto flex items-center justify-center min-h-[420px]">
+            {/* Modal Certificate PNG Image Display with Smooth Scale */}
+            <div className="flex-grow p-4 sm:p-8 bg-black/80 overflow-auto flex items-center justify-center min-h-[420px]">
               <img
                 src={activeCert.imageUrl}
                 alt={activeCert.title}
-                className="max-w-full max-h-[78vh] object-contain rounded-lg border border-border/60 shadow-2xl"
+                className="max-w-full max-h-[78vh] object-contain rounded-xl border border-border/60 shadow-2xl transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-105 cursor-zoom-in"
               />
             </div>
           </div>
